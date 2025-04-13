@@ -1,57 +1,52 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function AddExpenseForm({ onAddExpense }) {
-  const [expenseName, setExpenseName] = useState('');
-  const [amount, setAmount] = useState('');
-  const [date, setDate] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!expenseName || !amount || !date) return;
-
-    const newExpense = {
-      name: expenseName,
-      amount: parseFloat(amount),
-      date: new Date(date),
-    };
-
-    onAddExpense(newExpense);
-    setExpenseName('');
-    setAmount('');
-    setDate('');
-  };
-
+function AddExpenseForm({ formData, handleInputChange, handleFormSubmit }) {
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Expense Name:</label>
+    <aside className="App-sidebar">
+      <h2>Add Expense</h2>
+      <form onSubmit={handleFormSubmit}>
         <input
           type="text"
-          value={expenseName}
-          onChange={(e) => setExpenseName(e.target.value)}
+          name="expenseName"
+          placeholder="Enter expense name"
+          value={formData.expenseName}
+          onChange={handleInputChange}
           required
         />
-      </div>
-      <div>
-        <label>Amount:</label>
+        <input
+          type="text"
+          name="description"
+          placeholder="Description"
+          value={formData.description}
+          onChange={handleInputChange}
+          required
+        />
         <input
           type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          name="amount"
+          placeholder="Amount"
+          value={formData.amount}
+          onChange={handleInputChange}
           required
         />
-      </div>
-      <div>
-        <label>Date:</label>
+        <input
+          type="text"
+          name="category"
+          placeholder="Enter expense category"
+          value={formData.category}
+          onChange={handleInputChange}
+          required
+        />
         <input
           type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
+          name="date"
+          value={formData.date}
+          onChange={handleInputChange}
           required
         />
-      </div>
-      <button type="submit">Add Expense</button>
-    </form>
+        <button type="submit">Submit</button>
+      </form>
+    </aside>
   );
 }
 
