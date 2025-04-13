@@ -60,7 +60,7 @@ function App() {
             <input
               type="text"
               name="category"
-              placeholder="Category"
+              placeholder="Enter expense category"
               value={formData.category}
               onChange={handleInputChange}
               required
