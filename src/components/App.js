@@ -43,6 +43,14 @@ function App() {
           <form onSubmit={handleFormSubmit}>
             <input
               type="text"
+              name="expense name"
+              placeholder="Enter expense name"
+              value={formData.description}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type="text"
               name="description"
               placeholder="Description"
               value={formData.description}
