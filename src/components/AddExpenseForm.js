@@ -15,8 +15,8 @@ function AddExpenseForm({ formData, handleInputChange, handleFormSubmit }) {
         />
         <input
           type="text"
-          name="Expense description"
-          placeholder="Description"
+          name="description"
+          placeholder="Enter expense description"
           value={formData.description}
           onChange={handleInputChange}
           required
