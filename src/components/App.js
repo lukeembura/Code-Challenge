@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../';
+import '../App.css';
 
 function App() {
   const [expenses, setExpenses] = useState([]);

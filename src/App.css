@@ -18,7 +18,7 @@ App {
 }
 
 .App-header {
-  background-color: black; /* Black header background */
+  background-color: skyblue; /* Black header background */
   color: white; /* White text */
   padding: 10px 20px;
   text-align: left;
@@ -84,7 +84,7 @@ App {
 }
 
 .App-sidebar form button {
-  background-color: black; /* Black button */
+  background-color: skyblue; 
   color: white; /* White text */
   border: none;
   padding: 10px;
