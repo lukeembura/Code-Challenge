@@ -24,7 +24,7 @@ function AddExpenseForm({ formData, handleInputChange, handleFormSubmit }) {
         <input
           type="number"
           name="amount"
-          placeholder="Amount"
+          placeholder="Enter amount"
           value={formData.amount}
           onChange={handleInputChange}
           required
