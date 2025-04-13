@@ -32,6 +32,9 @@ function App() {
       <header className="App-header">
         <h1>Expense Tracker</h1>
       </header>
+      <div className="App-content">
+        <p></p>
+       </div> 
       <div className="App-body">
         {/* Sidebar for Form */}
         <aside className="App-sidebar">
