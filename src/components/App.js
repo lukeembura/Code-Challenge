@@ -3,7 +3,7 @@ import '../App.css';
 
 function App() {
   const [expenses, setExpenses] = useState([]);
-  const [formData, setFormData] = useState({ description: '', amount: '', category: '', date: '' });
+  const [formData, setFormData] = useState({ expenseName: '', description: '', amount: '', category: '', date: '' });
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = (e) => {
@@ -14,7 +14,7 @@ function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     setExpenses([...expenses, formData]);
-    setFormData({ description: '', amount: '', category: '', date: '' });
+    setFormData({ expenseName: '', description: '', amount: '', category: '', date: '' });
   };
 
   const handleSearchChange = (e) => {
@@ -23,6 +23,7 @@ function App() {
 
   const filteredExpenses = expenses.filter(
     (expense) =>
+      expense.expenseName.toLowerCase().includes(searchTerm) ||
       expense.description.toLowerCase().includes(searchTerm) ||
       expense.category.toLowerCase().includes(searchTerm)
   );
@@ -33,8 +34,8 @@ function App() {
         <h1>Expense Tracker</h1>
       </header>
       <div className="App-content">
-        <p>Start taking control of your finances and life. Record,categorize and analyze your spending.</p>
-       </div> 
+        <p>Start taking control of your finances and life. Record, categorize, and analyze your spending.</p>
+      </div>
       <div className="App-body">
         {/* Sidebar for Form */}
         <aside className="App-sidebar">
@@ -42,9 +43,9 @@ function App() {
           <form onSubmit={handleFormSubmit}>
             <input
               type="text"
-              name="expense name"
+              name="expenseName"
               placeholder="Enter expense name"
-              value={formData.description}
+              value={formData.expenseName}
               onChange={handleInputChange}
               required
             />
@@ -104,6 +105,7 @@ function App() {
             <tbody>
               {filteredExpenses.map((expense, index) => (
                 <tr key={index}>
+                  <td>{expense.expenseName}</td>
                   <td>{expense.description}</td>
                   <td>{expense.amount}</td>
                   <td>{expense.category}</td>
