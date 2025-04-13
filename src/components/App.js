@@ -33,8 +33,7 @@ function App() {
         <h1>Expense Tracker</h1>
       </header>
       <div className="App-content">
-        <p>Start taking control of your finances and life. Record,<br>
-        </br>categorize and analyze your spending.</p>
+        <p>Start taking control of your finances and life. Record,categorize and analyze your spending.</p>
        </div> 
       <div className="App-body">
         {/* Sidebar for Form */}
