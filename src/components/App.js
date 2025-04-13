@@ -94,6 +94,7 @@ function App() {
           <table>
             <thead>
               <tr>
+                <th>Expense Name</th>
                 <th>Description</th>
                 <th>Amount</th>
                 <th>Category</th>
