@@ -21,7 +21,7 @@ function ExpenseTable({ expenses, deleteExpense }) {
             <td>{expense.amount}</td>
             <td>{expense.category}</td>
             <td>{expense.date}</td>
-            <td>
+            <td className="delete-button">
               <button onClick={() => deleteExpense(expense.id)}>Delete</button>
             </td>
           </tr>
