@@ -4,6 +4,7 @@ function AddExpenseForm({ formData, handleInputChange, handleFormSubmit }) {
   return (
     <aside className="App-sidebar">
       <h2>Add Expense</h2>
+      <p>Fill in the details of your expense below:</p>
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
