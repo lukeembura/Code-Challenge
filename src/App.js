@@ -17,12 +17,17 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setExpenses([...expenses, formData]);
+
+    setExpenses([...expenses, { ...formData, id: Date.now() }]); // Add a unique ID to each expense
     setFormData({ expenseName: '', description: '', amount: '', category: '', date: '' });
   };
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
+  };
+
+  const deleteExpense = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id)); // Remove the expense with the matching ID
   };
 
   const filteredExpenses = expenses.filter(
@@ -46,9 +51,7 @@ function App() {
         />
         <main className="App-main">
           <SearchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
-          <ExpenseTable expenses={filteredExpenses}
-          deleteExpense={deleteExpense}
-           />
+          <ExpenseTable expenses={filteredExpenses} deleteExpense={deleteExpense} />
         </main>
       </div>
     </div>
