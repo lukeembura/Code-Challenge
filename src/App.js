@@ -46,7 +46,9 @@ function App() {
         />
         <main className="App-main">
           <SearchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
-          <ExpenseTable expenses={filteredExpenses} />
+          <ExpenseTable expenses={filteredExpenses}
+          deleteExpense={deleteExpense}
+           />
         </main>
       </div>
     </div>
